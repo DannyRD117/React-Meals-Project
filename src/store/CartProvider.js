@@ -52,10 +52,9 @@ const cartReducer = (state, action) => {
       updatedItems = [...state.items];
       updatedItems[existingCartItemIndex] = updatedItem;
     }
-    console.log(updatedItems);
     return {
       items: updatedItems,
-      totalAmount: updatedTotalAmount,
+      totalAmount: updatedItems.length === 0 ? 0 : updatedTotalAmount,
     };
   }
   return defaultCartState;
